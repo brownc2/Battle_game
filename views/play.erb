@@ -8,7 +8,19 @@
     <img src="https://cutewallpaper.org/21/pictures-of-ash-and-pikachu/Ash-And-Pikachu-clipart-May-Clothing-Yellow-transparent-.jpg"
     width="400"
     height="500">
+    
     <center>
+    <% if $game.player_1.hit_points <= 0 %>
+      <h1>  You lose player 1  </h1>
+      <form action="/">
+      <button style='width: 200px; height: 200px; font-size:50px;'> Restart </button>
+      </form>
+    <% elsif $game.player_2.hit_points <= 0 %>
+      <h1> "You lose player 2" </h1>
+       <form action="/">
+        <button style='width: 200px; height: 200px; font-size:50px;'> Restart </button>
+      </form>
+    <% end %>
     <h1><%= @game.current_turn.name %>'s turn</h1>
     <form action="/attack">
       <button style='width: 200px; height: 200px; font-size:50px;'>
@@ -26,9 +38,5 @@
     <img src="https://dynaimage.cdn.cnn.com/cnn/q_auto,w_727,c_fit/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F210226040722-01-pokemon-anniversary-design.jpg"
     width="600"
     height="500">
-  
-
-
-
 
 </html>
